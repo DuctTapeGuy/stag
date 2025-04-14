@@ -14,7 +14,7 @@ public class Main4Test
     @BeforeEach
     public void setUpStreams() {
         System.setOut(new PrintStream(outContent));
-    }
+    } //podstrcime falesnou konzoli a z ni tohle cte
 
     @AfterEach
     public void restoreStreams() {
@@ -25,7 +25,6 @@ public class Main4Test
     public void test01()
     {
         Main4.printShortestEmails("KIKM",5);
-        // TODO 4.2: Oprav test
         assertEquals(
                 "jan.vanek@uhk.cz\r\npetr.bauer@uhk.cz\r\njan.budina@uhk.cz\r\nfilip.maly@uhk.cz\r\nkarel.maly@uhk.cz\r\n",
                 outContent.toString()
