@@ -18,12 +18,12 @@ public class Main4 {
         String json = Api.getTeachersByDepartment(department);
         TeachersList teachers = new Gson().fromJson(json, TeachersList.class);
 
-        List<Teacher> restult = teachers.items.stream()
+        List<Teacher> result = teachers.items.stream()
                 .filter(t -> t.email != null) //odfiltrujem prazdny emaily
                 .sorted(Comparator.comparing(t -> t.email.length())) //setridime podle delky emailu ucitelu, od nejmensiho po nejvetsi
                 .limit(count).toList(); //vezmem prvnich par
 
-        for(Teacher t : restult) System.out.println(t.email); //a prvnich N nejkratsich emailu je....
+        for(Teacher t : result) System.out.println(t.email); //a prvnich N nejkratsich emailu je....
 
 
         //alternativa: teachers.items().stream()
